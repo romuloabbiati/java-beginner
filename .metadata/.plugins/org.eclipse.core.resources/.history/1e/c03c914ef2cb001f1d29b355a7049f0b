@@ -15,7 +15,7 @@ public class CalcularValorTroco {
 		
 		Double resultado = valorPassadoPeloCliente - valorProduto;
 		
-		System.out.println("Troco: " + resultado);
+		System.out.println("Troco: " + valorProduto);
 		
 		scanner.close();
 	}
