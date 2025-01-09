@@ -3,6 +3,8 @@ package exercicio03;
 import java.util.Scanner;
 
 public class Mod03Exercicio03 {
+	
+	final static Integer MINIMUM_SCORE = 70;
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
@@ -10,7 +12,7 @@ public class Mod03Exercicio03 {
 		System.out.print("Enter the student's scoring: ");
 		Double score = scanner.nextDouble();
 		
-		Boolean isGreaterThanSeventy = score >= 70;
+		Boolean isGreaterThanSeventy = score >= MINIMUM_SCORE;
 		
 		String message;
 		
