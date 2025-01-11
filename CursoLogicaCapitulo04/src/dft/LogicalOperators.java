@@ -1,6 +1,6 @@
 package dft;
 
-public class LogicOperators {
+public class LogicalOperators {
 
 	public static void main(String[] args) {
 		Boolean carrinhoMaiorQue100 = true;
