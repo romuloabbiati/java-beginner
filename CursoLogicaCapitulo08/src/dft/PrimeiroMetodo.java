@@ -23,8 +23,7 @@ public class PrimeiroMetodo {
 		Boolean posicaoValida = posicaoCursoEscolhido >= 0 && posicaoCursoEscolhido < cursos.length;
 		
 		if (!posicaoValida) {
-			System.err.println("Posicao invalida!");
-			System.exit(1);
+			encerrarProgramaPorCausaDePosicaoInvalida();
 		}
 		
 		imprimirTraco();
@@ -43,6 +42,10 @@ public class PrimeiroMetodo {
 		posicaoValida = posicaoFormaPagamentoEscolhida >= 0 
 				&& posicaoFormaPagamentoEscolhida < formasPagamento.length;
 		
+		if (!posicaoValida) {
+			encerrarProgramaPorCausaDePosicaoInvalida();
+		}
+		
 		String cursoEscolhido = cursos[posicaoCursoEscolhido];
 		String formaPagamentoEscolhida = formasPagamento[posicaoFormaPagamentoEscolhida];
 		
@@ -55,6 +58,11 @@ public class PrimeiroMetodo {
 	
 	static void imprimirTraco() {
 		System.out.println("----------------------------------------------");
+	}
+	
+	static void encerrarProgramaPorCausaDePosicaoInvalida() {
+		System.err.println("Posicao invalida!");
+		System.exit(1);
 	}
 
 }
