@@ -11,12 +11,12 @@ public class RecebendoParametros {
 		
 		String[] cursos = new String[] {"Java EE", "Spring", "Java OO Avancado"};
 		
-		System.out.println("Escolha dentre os cursos abaixo: ");
+		imprimir("Escolha dentre os cursos abaixo: ");
 		
 		
 		iterarEExibirPosicoesDoVetorString(cursos);
 		
-		System.out.print("O curso que voce deseja eh o: ");
+		imprimirEContinuarMesmaLinha("O curso que voce deseja eh o: ");
 		Integer posicaoCursoEscolhido = scanner.nextInt();
 		
 		Boolean posicaoValida = posicaoCursoEscolhido >= 0 && posicaoCursoEscolhido < cursos.length;
@@ -29,11 +29,11 @@ public class RecebendoParametros {
 		
 		String[] formasPagamento = new String[] { "Cartao", "Boleto" };
 		
-		System.out.println("Escolha dentre as formas de pagamento abaixo: ");
+		imprimir("Escolha dentre as formas de pagamento abaixo: ");
 		
 		iterarEExibirPosicoesDoVetorString(formasPagamento);
 		
-		System.out.println("Sua forma de pagamento escolhida eh: ");
+		imprimirEContinuarMesmaLinha("Sua forma de pagamento escolhida eh: ");
 		Integer posicaoFormaPagamentoEscolhida = scanner.nextInt();
 		
 		posicaoValida = posicaoFormaPagamentoEscolhida >= 0 
@@ -48,7 +48,7 @@ public class RecebendoParametros {
 		
 		imprimirTraco();
 		
-		System.out.println("O curso escolhido foi " + cursoEscolhido + " e a forma de pagamento eh " + formaPagamentoEscolhida + ".");
+		imprimir("O curso escolhido foi " + cursoEscolhido + " e a forma de pagamento eh " + formaPagamentoEscolhida + ".");
 		
 		scanner.close();
 	}
@@ -66,6 +66,14 @@ public class RecebendoParametros {
 	static void encerrarProgramaPorCausaDePosicaoInvalida() {
 		System.err.println("Posicao invalida!");
 		System.exit(1);
+	}
+	
+	static void imprimir(String texto) {
+		System.out.println(texto);
+	}
+	
+	static void imprimirEContinuarMesmaLinha(String texto) {
+		System.out.print(texto);
 	}
 
 }
