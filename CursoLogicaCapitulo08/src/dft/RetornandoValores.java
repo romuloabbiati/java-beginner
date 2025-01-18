@@ -1,24 +1,86 @@
 package dft;
 
+import java.util.Scanner;
+
 public class RetornandoValores {
 
 	public static void main(String[] args) {
-
-		// 50 --- 100%
-		// x  --- 20%
+		Scanner scanner = new Scanner(System.in);
 		
-		Double[] premissaInicial = new Double[] { 50.0, 100.0 };
-		Double proporcao = 20.0;
+		imprimirTraco();
 		
-		Double resultadoFinal = regraDeTres(premissaInicial, proporcao);
+		String[] cursos = new String[] {"Java EE", "Spring", "Java OO Avancado"};
 		
-		System.out.println("Resultado: " + resultadoFinal);
-
+		imprimir("Escolha dentre os cursos abaixo: ");
+		
+		
+		iterarEExibirPosicoesDoVetorString(cursos);
+		
+		Integer posicaoCursoEscolhido = receberNumeroInteiroDoUsuario("O curso que voce deseja eh o: ", scanner);
+		
+		Boolean posicaoValida = verificarPosicaoEscolhidaPeloUsuario(posicaoCursoEscolhido, cursos); 
+		
+		if (!posicaoValida) {
+			encerrarProgramaPorCausaDePosicaoInvalida();
+		}
+		
+		imprimirTraco();
+		
+		String[] formasPagamento = new String[] { "Cartao", "Boleto" };
+		
+		imprimir("Escolha dentre as formas de pagamento abaixo: ");
+		
+		iterarEExibirPosicoesDoVetorString(formasPagamento);
+		
+		Integer posicaoFormaPagamentoEscolhida = receberNumeroInteiroDoUsuario("Sua forma de pagamento escolhida eh: ", scanner);
+		
+		posicaoValida = verificarPosicaoEscolhidaPeloUsuario(posicaoFormaPagamentoEscolhida, formasPagamento); 
+		
+		if (!posicaoValida) {
+			encerrarProgramaPorCausaDePosicaoInvalida();
+		}
+		
+		String cursoEscolhido = cursos[posicaoCursoEscolhido];
+		String formaPagamentoEscolhida = formasPagamento[posicaoFormaPagamentoEscolhida];
+		
+		imprimirTraco();
+		
+		imprimir("O curso escolhido foi " + cursoEscolhido + " e a forma de pagamento eh " + formaPagamentoEscolhida + ".");
+		
+		scanner.close();
 	}
 	
-	static Double regraDeTres(Double[] premissa, Double proporcao) {
-		Double resultado = premissa[0] * proporcao / premissa[1];
-		return resultado;
+	static Integer receberNumeroInteiroDoUsuario(String texto, Scanner scanner) {
+		imprimirEContinuarMesmaLinha(texto);
+		Integer numero = scanner.nextInt();
+		return numero;
+	}
+	
+	static Boolean verificarPosicaoEscolhidaPeloUsuario(Integer posicao, String[] vetor) {
+		return posicao >= 0 && posicao < vetor.length;
+	}
+	
+	static void iterarEExibirPosicoesDoVetorString(String[] vetor) {
+		for (int i = 0; i < vetor.length; i++) {
+			System.out.println("[" + i + "] " + vetor[i]);
+		}
+	}
+	
+	static void imprimirTraco() {
+		System.out.println("----------------------------------------------");
+	}
+	
+	static void encerrarProgramaPorCausaDePosicaoInvalida() {
+		System.err.println("Posicao invalida!");
+		System.exit(1);
+	}
+	
+	static void imprimir(String texto) {
+		System.out.println(texto);
+	}
+	
+	static void imprimirEContinuarMesmaLinha(String texto) {
+		System.out.print(texto);
 	}
 
 }
