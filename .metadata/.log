@@ -273,3 +273,16 @@ Command-line arguments:  -os macosx -ws cocoa -arch aarch64 -product org.eclipse
 
 !ENTRY ch.qos.logback.classic 1 0 2025-01-21 05:40:29.241
 !MESSAGE Logback config file: /Users/romuloabbiati/Documents/java-beginner/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.6.1.20240411-1122.xml
+!SESSION 2025-01-22 04:31:53.231 -----------------------------------------------
+eclipse.buildId=4.33.0.20240905-0613
+java.version=23.0.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=aarch64, WS=cocoa, NL=en_GB
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/romuloabbiati/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch aarch64 -product org.eclipse.epp.package.java.product -keyring /Users/romuloabbiati/.eclipse_keyring
+
+!ENTRY ch.qos.logback.classic 1 0 2025-01-22 04:31:54.398
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2025-01-22 04:31:57.794
+!MESSAGE Logback config file: /Users/romuloabbiati/Documents/java-beginner/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.6.1.20240411-1122.xml
