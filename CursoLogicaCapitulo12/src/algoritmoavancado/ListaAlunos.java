@@ -2,21 +2,21 @@ package algoritmoavancado;
 
 public class ListaAlunos {
 	
-	static final int QUANTIDADE_LISTA = 2;
+	public static final int QUANTIDADE_LISTA = 2;
 	
-	Aluno[] lista = new Aluno[QUANTIDADE_LISTA];
+	public Aluno[] lista = new Aluno[QUANTIDADE_LISTA];
 	
-	int tamanhoLista = 0;
+	public int tamanhoLista = 0;
 	
-	Aluno obter(int indice) {
+	public Aluno obter(int indice) {
 		return lista[indice];
 	}
 	
-	int tamanho() {
+	public int tamanho() {
 		return tamanhoLista;
 	}
 	
-	void adicionar(Aluno aluno) {
+	public void adicionar(Aluno aluno) {
 		if (tamanhoLista == lista.length) {
 			Aluno[] novaLista = new Aluno[QUANTIDADE_LISTA + lista.length];
 			
@@ -31,7 +31,7 @@ public class ListaAlunos {
 		tamanhoLista++;
 	}
 	
-	void remover(Aluno aluno) {
+	public void remover(Aluno aluno) {
 		for (int i = 0; i < tamanhoLista; i++) {
 			Aluno a = lista[i];
 			
@@ -45,7 +45,7 @@ public class ListaAlunos {
 		}
 	}
 	
-	void remover(int indice) {
+	public void remover(int indice) {
 		int indiceInicial = indice + 1;
 		
 		for (int i = indiceInicial; i < tamanhoLista; i++) {
@@ -55,7 +55,7 @@ public class ListaAlunos {
 		lista[tamanhoLista] = null;
 	}
 	
-	void ordenar() {
+	public void ordenar() {
 		for (int i = 1; i < tamanhoLista; i++) {
 			Aluno alunoPosicaoBase = lista[i];
 			int indicePosicaoBase = i;

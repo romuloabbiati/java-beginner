@@ -2,9 +2,9 @@ package algoritmoavancado;
 
 public class Aluno {
 	
-	String nome;
+	public String nome;
 	
-	boolean vemDepoisDe(Aluno aluno) {
+	public boolean vemDepoisDe(Aluno aluno) {
 		if (aluno == null) {
 			return false;
 		}
